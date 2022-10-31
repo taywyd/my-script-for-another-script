@@ -1,0 +1,18 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("tays hub", "BloodTheme")
+
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("Skeleton", "see their skeleton", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Cornyllius/ESPs/main/SkeletonESP.lua'))()
+end)
+
+MainSection:NewSlider("FOV", "WalkSpeed", 120, 80, function(s) -- 500 (MaxValue) | 16 (MinValue)
+    game:GetService'Workspace'.Camera.FieldOfView = s
+end)
+
+MainSection:NewSlider("WalkSpeed", "ZOOOOM", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
